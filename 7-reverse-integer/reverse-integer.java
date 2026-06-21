@@ -1,6 +1,6 @@
 class Solution {
     public int reverse(int x) {
-        if (x == Integer.MIN_VALUE) {
+        if (x == Integer.MIN_VALUE || x == Integer.MAX_VALUE ) {
             return 0;
         }
         if(x>0){
@@ -24,7 +24,10 @@ class Solution {
             int b=x;
             while(b!=0){
                 int c=b%10;
-                if (a > Integer.MAX_VALUE / 10 || (a == Integer.MAX_VALUE / 10 && c > 7)) {
+                if ((a > Integer.MAX_VALUE / 10 || (a == Integer.MAX_VALUE / 10 && c > 7))) {
+                return 0;
+            }
+            if (a < Integer.MIN_VALUE / 10 || (a == Integer.MIN_VALUE / 10 && c >  -8)) {
                 return 0;
             }
                 a=(a*10)+c;
